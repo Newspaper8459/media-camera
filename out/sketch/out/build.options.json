@@ -1,0 +1,12 @@
+#line 1 "C:\\projects\\media_arduino\\media-camera\\out\\build.options.json"
+{
+  "additionalFiles": "..\\..\\..,..\\..\\..,..\\..,..\\..,..\\..,..\\..\\..,..\\..\\..,..\\..\\..,..\\..\\..\\..,..\\..\\..\\..\\..,..\\..\\..\\..\\..,..\\..\\..\\..,..\\..\\..\\..,..\\..\\..\\..,..\\..\\..\\..",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "",
+  "fqbn": "esp32:esp32:esp32wrover:PartitionScheme=huge_app,FlashMode=qio,FlashFreq=80,UploadSpeed=115200,DebugLevel=none,EraseFlash=none",
+  "hardwareFolders": "C:\\Users\\makog\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\makog\\OneDrive\\ドキュメント\\Arduino\\libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "C:\\projects\\media_arduino\\media-camera"
+}

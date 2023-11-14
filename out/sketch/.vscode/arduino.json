@@ -1,0 +1,9 @@
+#line 1 "C:\\projects\\media_arduino\\media-camera\\.vscode\\arduino.json"
+{
+    "configuration": "PartitionScheme=huge_app,FlashMode=qio,FlashFreq=80,UploadSpeed=115200,DebugLevel=none,EraseFlash=none",
+    "board": "esp32:esp32:esp32wrover",
+    "programmer": "esptool",
+    "port": "COM5",
+    "sketch": "media-camera.ino",
+    "output": "./out"
+}
