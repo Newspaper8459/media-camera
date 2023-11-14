@@ -42,8 +42,10 @@ using ll = long long;
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char* ssid = "Zenfone-8_3317";
-const char* password = "e8zrya633cj8cqg";
+// const char* ssid = "Zenfone-8_3317";
+const char* ssid = "aterm-b10cdc-g";
+// const char* password = "e8zrya633cj8cqg";
+const char* password = "9ca442f802e19";
 const char* apiEndpoint = "https://detect-ml-mvrz27tnnq-an.a.run.app/api/calc/";
 const char* detectApiEndpoint = "https://detect-ml-mvrz27tnnq-an.a.run.app/api/detect/";
 const char* contentType = "application/json";
@@ -182,7 +184,7 @@ void cameraCapture() {
   int httpCode = http.POST(postData);
 
   esp_camera_fb_return(fb);
-  Serial.println(httpCode);
+  // Serial.println(httpCode);
   if (httpCode > 0) {
     String payload = http.getString();
     Serial.println("status: " + String(httpCode));
@@ -190,6 +192,8 @@ void cameraCapture() {
     double brightness = payload.toFloat();
     // if(brightness < 0.1) push();
     if(flag && brightness < 0.2){
+      // Serial.println(flag);
+      Serial.println("processing 'push'");
       bool res = push();
       if(!res) Serial.println("push failed");
       else Serial.println("push successful");
@@ -212,9 +216,11 @@ float median(std::vector<float> a){
 bool push(){
   camera_fb_t* fb = NULL;
 
-  digitalWrite(LED_GPIO_NUM, HIGH);
+  analogWrite(LED_GPIO_NUM, 255);
+  delay(100);
   fb = esp_camera_fb_get();
-  digitalWrite(LED_GPIO_NUM, LOW);
+  delay(100);
+  analogWrite(LED_GPIO_NUM, 0);
   if (!fb) {
     Serial.println("Camera capture failed");
     return false;
@@ -243,12 +249,12 @@ bool push(){
 }
 
 void loop() {
-  // cameraCapture();
+  cameraCapture();
   // digitalWrite(LED_GPIO_NUM, HIGH);
-  analogWrite(LED_GPIO_NUM, 255);
-  Serial.println("-------------------------");
-  delay(2000);
+  // analogWrite(LED_GPIO_NUM, 255);
+  // Serial.println("-------------------------");
+  // delay(2000);
   // digitalWrite(LED_GPIO_NUM, LOW);
-  analogWrite(LED_GPIO_NUM, 0);
-  delay(2000);
+  // analogWrite(LED_GPIO_NUM, 0);
+  // delay(2000);
 }
